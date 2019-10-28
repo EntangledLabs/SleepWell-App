@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
     tools:context=".MainActivity">
 
 
@@ -45,11 +46,12 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="120dp"
+        android:alpha="1"
+        android:background="#00FFFFFF"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/app_name"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
