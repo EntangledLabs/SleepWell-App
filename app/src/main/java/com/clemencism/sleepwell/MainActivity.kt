@@ -59,9 +59,34 @@ class MainActivity : AppCompatActivity() {
         }.build()
 
         val imageCapture = ImageCapture(imageCaptureConfig)
-        findViewById<Button>(R.id.button)
+        findViewById<Button>(R.id.button).setOnClickListener {
+            val file = File(externalMediaDirs.first(), "$[System.currentTimeMillis()}.jpg")
+            
+            imageCapture.takePicture(file, executor,
+                object : ImageCapture.OnSavedListener {
+                    override fun onError(
+                        imageCaptureError: ImageCapture.ImageCaptureError,
+                        message: String,
+                        exc: Throwable?
+                    ) {
+                        val msg = "Photo capture failed: $message"
+                        Log.e("CameraXApp", msg, exc)
+                        viewFinder.post {
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    
+                    override fun onImageSaved(file: File){
+                        val msg = "Photo captured, analyzing."
+                        Log.d("CameraXApp", msg)
+                        viewFinder.post {
+                            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
+        }
 
-        CameraX.bindToLifecycle(this, preview)
+        CameraX.bindToLifecycle(this, preview, imageCapture)
 
     }
 
