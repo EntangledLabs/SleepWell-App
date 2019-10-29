@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
+
+        viewFinder.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+            updateTransform()
+        }
     }
 
     private val executor = Executors.newSingleThreadExecutor()
@@ -90,6 +94,19 @@ class MainActivity : AppCompatActivity() {
 
         CameraX.bindToLifecycle(this, preview, imageCapture)
 
+    }
+
+    private fun updateTransform(){
+        val matrix = Matrix()
+
+        val centerX = viewFinder.width/2f
+        val centerY = viewFinder.height/2f
+
+        val rotationDegrees = 90
+
+        matrix.postRotate(-rotationDegrees.toFloat(), centerX, centerY)
+
+        viewFinder.setTransform(matrix)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

@@ -14,41 +14,28 @@
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="150dp"
         android:text="@string/result_button"
-        app:layout_constraintBottom_toTopOf="@+id/view_finder"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="115dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/group_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.35000002" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="120dp"
         android:alpha="1"
         android:background="#00FFFFFF"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/app_name"
+        android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,26 +46,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="150dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/group_name"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        app:layout_constraintVertical_bias="0.87" />
 
     <TextView
         android:id="@+id/result_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="175dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="175dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/result_tag"
+        android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/group_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/view_finder"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextureView
@@ -86,14 +79,13 @@
         android:layout_width="320dp"
         android:layout_height="320dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="57dp"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
