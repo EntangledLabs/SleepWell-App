@@ -7,6 +7,7 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import android.util.Size
 import android.graphics.Matrix
+import android.util.Log
 import android.view.Surface
 import android.view.TextureView
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import android.widget.Toast
 import androidx.camera.core.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             val file = File(externalMediaDirs.first(), "$[System.currentTimeMillis()}.jpg")
             
             imageCapture.takePicture(file, executor,
-                object : ImageCapture.OnSavedListener {
+                object : ImageCapture.OnImageSavedListener {
                     override fun onError(
                         imageCaptureError: ImageCapture.ImageCaptureError,
                         message: String,
