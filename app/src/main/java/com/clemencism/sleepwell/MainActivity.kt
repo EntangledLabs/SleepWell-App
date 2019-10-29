@@ -19,6 +19,14 @@ import androidx.core.content.ContextCompat
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import android.R.attr.orientation
+import android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT
+import androidx.core.view.ViewCompat.getRotation
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 private const val REQUEST_CODE_PERMISSIONS = 10
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
@@ -66,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         val imageCapture = ImageCapture(imageCaptureConfig)
         findViewById<Button>(R.id.button).setOnClickListener {
-            val file = File(externalMediaDirs.first(), "$[System.currentTimeMillis()}.jpg")
+            val file = File(externalMediaDirs.first(), "$[System.currentTimeMillis()}.png")
             
             imageCapture.takePicture(file, executor,
                 object : ImageCapture.OnImageSavedListener {
@@ -102,7 +110,9 @@ class MainActivity : AppCompatActivity() {
         val centerX = viewFinder.width/2f
         val centerY = viewFinder.height/2f
 
-        val rotationDegrees = 90
+        val rotationDegrees = when(viewFinder.display.rotation){
+            else -> 90
+        }
 
         matrix.postRotate(-rotationDegrees.toFloat(), centerX, centerY)
 
