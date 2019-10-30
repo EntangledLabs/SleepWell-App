@@ -18,18 +18,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
 import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
-import android.R.attr.orientation
-import android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT
-import androidx.core.view.ViewCompat.getRotation
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 
 
 private const val REQUEST_CODE_PERMISSIONS = 10
-private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
 class MainActivity : AppCompatActivity() {
 
