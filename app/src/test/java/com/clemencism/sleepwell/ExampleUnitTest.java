@@ -1,4 +1,4 @@
-package com.example.sleepwell;
+package com.clemencism.sleepwell;
 
 import org.junit.Test;
 
