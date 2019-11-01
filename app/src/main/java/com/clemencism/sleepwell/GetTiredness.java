@@ -42,7 +42,7 @@ public class GetTiredness {
         Imgproc.cvtColor(img, imggray, Imgproc.COLOR_BGR2GRAY);
 
 
-        faceCascade.detectMultiScale(imggray, faces, 1.2, 6);
+        //faceCascade.detectMultiScale(imggray, faces, 1.2, 6);
 
 
 
