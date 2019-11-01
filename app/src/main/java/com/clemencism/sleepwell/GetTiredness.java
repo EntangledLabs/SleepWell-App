@@ -28,8 +28,26 @@ public class GetTiredness {
 
 
     public static void main(String[] args) {
+        String filePath = "images/4/image4.png";
+        String casadePath;
+        CascadeClassifier faceCascade = new CascadeClassifier();
+
+        casadePath = "cascades/data/haarcascade_frontalface_alt2.xml";
+        faceCascade.load(casadePath);
+
+        Imgcodecs imageCodecs = new Imgcodecs();
+        Mat img = imageCodecs.imread(filePath);
+
+        Mat imggray = new Mat();
+        Imgproc.cvtColor(img, imggray, Imgproc.COLOR_BGR2GRAY);
+
+
+        faceCascade.detectMultiScale(imggray, faces, 1.2, 6);
+
+
 
     }
+
 
 
 }
