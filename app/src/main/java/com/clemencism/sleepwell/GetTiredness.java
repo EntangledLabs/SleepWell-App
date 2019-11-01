@@ -18,10 +18,7 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.imgcodecs.Imgcodecs;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import org.opencv.face.
 
 public class GetTiredness {
 
@@ -29,10 +26,11 @@ public class GetTiredness {
 
     public static void main(String[] args) {
         String filePath = "images/4/image4.png";
-        String casadePath;
         CascadeClassifier faceCascade = new CascadeClassifier();
 
-        casadePath = "cascades/data/haarcascade_frontalface_alt2.xml";
+
+
+        String casadePath = "cascades/data/haarcascade_frontalface_alt2.xml";
         faceCascade.load(casadePath);
 
         Imgcodecs imageCodecs = new Imgcodecs();
@@ -41,13 +39,14 @@ public class GetTiredness {
         Mat imggray = new Mat();
         Imgproc.cvtColor(img, imggray, Imgproc.COLOR_BGR2GRAY);
 
+        MatOfRect faces = new MatOfRect();
+        faceCascade.detectMultiScale(imggray, faces, 1.2, 6);
 
-        //faceCascade.detectMultiScale(imggray, faces, 1.2, 6);
-
+        LBPHFaceRecognizer faceRecognizer = LBPHFaceRecognizer.create();
+        faceRecognizer.read("./recognizers/face-trainner.yml");
 
 
     }
-
 
 
 }
