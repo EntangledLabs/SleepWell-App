@@ -18,7 +18,7 @@ import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.face.
+import org.opencv.face.*;
 
 public class GetTiredness {
 
