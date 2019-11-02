@@ -2,7 +2,5 @@
     <string name="app_name">SleepWell</string>
     <string name="result_button">Get Result</string>
     <string name="group_name">Clemencism</string>
-    <string name="numofhours">How many hours did you sleep?</string>
-    <string name="question">How was your sleep last night?</string>
     <string name="result_tag">You need 0 more hours of sleep!</string>
 </resources>
