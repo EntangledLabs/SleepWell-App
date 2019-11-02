@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion var
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.clemencism.sleepwell"
@@ -38,7 +38,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation project(path: ':openCVLibrary348')
 }
 repositories {
     mavenCentral()
