@@ -1,0 +1,2 @@
+0 Not_Tired
+1 Tired
